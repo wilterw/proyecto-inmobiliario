@@ -1,0 +1,126 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+model Account {
+  id                String  @id @default(cuid())
+  userId            String
+  type              String
+  provider          String
+  providerAccountId String
+  refresh_token     String?
+  access_token      String?
+  expires_at        Int?
+  token_type        String?
+  scope             String?
+  id_token          String?
+  session_state     String?
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([provider, providerAccountId])
+}
+
+model Session {
+  id           String   @id @default(cuid())
+  sessionToken String   @unique
+  userId       String
+  expires      DateTime
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model User {
+  id            String    @id @default(cuid())
+  name          String?
+  email         String    @unique
+  emailVerified DateTime?
+  image         String?
+  role          String    @default("USER")
+  accounts      Account[]
+  sessions      Session[]
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+}
+
+model Property {
+  id           String   @id @default(cuid())
+  title        String
+  description  String?
+  address      String
+  city         String
+  state        String
+  zipCode      String?
+  country      String   @default("Argentina")
+  price        Int
+  status       String   // "En Venta", "En Arriendo", "Vendido", "Arrendado"
+  propertyType String   // "Casa", "Departamento", "Oficina", "Local", "Terreno"
+  bedrooms     Int
+  bathrooms    Int
+  squareFeet   Int
+  yearBuilt    Int?
+  parking      Int      @default(0)
+  images       String[] // Array de URLs de imágenes
+  features     String[] // Array de características
+  latitude     Float?
+  longitude    Float?
+  mapUrl       String?
+  contactName  String?
+  contactEmail String?
+  contactPhone String?
+  contactLink  String?  // Nuevo campo para link personalizado
+  isActive     Boolean  @default(true)
+  isFeatured   Boolean  @default(false)
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+  inquiries    Inquiry[]
+}
+
+model Inquiry {
+  id         String   @id @default(cuid())
+  propertyId String
+  name       String
+  email      String
+  phone      String?
+  message    String?
+  status     String   @default("PENDING") // "PENDING", "CONTACTED", "CLOSED"
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+  property   Property @relation(fields: [propertyId], references: [id], onDelete: Cascade)
+}
+
+model SiteConfig {
+  id              String   @id @default("main")
+  siteName        String   @default("Portal Inmobiliario")
+  siteDescription String   @default("Encuentra tu próximo hogar")
+  logo            String?
+  favicon         String?
+  primaryColor    String   @default("#2563eb")
+  secondaryColor  String   @default("#64748b")
+  accentColor     String   @default("#10b981")
+  theme           String   @default("blue")
+  contactEmail    String?
+  contactPhone    String?
+  address         String?
+  socialMedia     String?  // JSON string
+  googleMapsKey   String?
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+}
+
+model Theme {
+  id          String   @id @default(cuid())
+  name        String   @unique
+  displayName String
+  colors      String   // JSON string con los colores
+  isActive    Boolean  @default(false)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
