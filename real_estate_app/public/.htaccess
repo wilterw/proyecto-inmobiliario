@@ -1,0 +1,92 @@
+RewriteEngine On
+
+# Handle Angular/React routes - send all requests to index.php except for existing files
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php [QSA,L]
+
+# Security headers
+<IfModule mod_headers.c>
+    Header always set X-Content-Type-Options nosniff
+    Header always set X-Frame-Options SAMEORIGIN
+    Header always set X-XSS-Protection "1; mode=block"
+    Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains"
+</IfModule>
+
+# MIME types
+AddType application/javascript .js
+AddType text/css .css
+
+# Compress static files
+<IfModule mod_deflate.c>
+    <FilesMatch "\.(css|js|html|htm|xml|txt|json)$">
+        SetOutputFilter DEFLATE
+    </FilesMatch>
+</IfModule>
+
+# Cache static files
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresByType text/css "access plus 1 year"
+    ExpiresByType application/javascript "access plus 1 year"
+    ExpiresByType image/jpg "access plus 1 year"
+    ExpiresByType image/jpeg "access plus 1 year"
+    ExpiresByType image/gif "access plus 1 year"
+    ExpiresByType image/png "access plus 1 year"
+    ExpiresByType image/svg+xml "access plus 1 year"
+    ExpiresByType font/woff "access plus 1 year"
+    ExpiresByType font/woff2 "access plus 1 year"
+    ExpiresByType font/ttf "access plus 1 year"
+    ExpiresByType font/eot "access plus 1 year"
+</IfModule>
+
+# Security - Deny access to sensitive files
+<Files ".env">
+    Order Allow,Deny
+    Deny from all
+</Files>
+
+<Files "*.log">
+    Order Allow,Deny
+    Deny from all
+</Files>
+
+# Upload security
+<Directory "uploads">
+    <Files "*.php">
+        Order Allow,Deny
+        Deny from all
+    </Files>
+    <Files "*.phtml">
+        Order Allow,Deny
+        Deny from all
+    </Files>
+    <Files "*.php3">
+        Order Allow,Deny
+        Deny from all
+    </Files>
+    <Files "*.pl">
+        Order Allow,Deny
+        Deny from all
+    </Files>
+    <Files "*.py">
+        Order Allow,Deny
+        Deny from all
+    </Files>
+    <Files "*.jsp">
+        Order Allow,Deny
+        Deny from all
+    </Files>
+    <Files "*.asp">
+        Order Allow,Deny
+        Deny from all
+    </Files>
+    <Files "*.sh">
+        Order Allow,Deny
+        Deny from all
+    </Files>
+    <Files "*.cgi">
+        Order Allow,Deny
+        Deny from all
+    </Files>
+</Directory>
