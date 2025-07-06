@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HGW - Transforma Tu Vida</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- GSAP CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <h1>HGW</h1>
+                <span>Health • Growth • Wealth</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+        <div class="video-background">
+            <video autoplay muted loop>
+                <source src="https://assets.mixkit.co/videos/preview/mixkit-people-in-a-meeting-room-4102-large.mp4" type="video/mp4">
+            </video>
+            <div class="video-overlay"></div>
+        </div>
+        <div class="hero-content">
+            <h1>Transforma Tu Vida con HGW</h1>
+            <p>Descubre cómo miles de personas están construyendo libertad financiera mientras transforman su salud y bienestar</p>
+            <a href="#problem" class="cta-scroll">Descubre Más</a>
+        </div>
+    </section>
+
+    <!-- Problem/Aspiration Section -->
+    <section id="problem" class="problem">
+        <div class="container">
+            <h2>¿Te Identificas con Alguna de Estas Situaciones?</h2>
+            <div class="problem-grid">
+                <div class="problem-card">
+                    <div class="icon">
+                        <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"/>
+                            <polyline points="12,6 12,12 16,14"/>
+                        </svg>
+                    </div>
+                    <h3>Falta de Tiempo</h3>
+                    <p>Trabajas largas horas pero nunca tienes tiempo para lo que realmente importa</p>
+                </div>
+                <div class="problem-card">
+                    <div class="icon">
+                        <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="12" y1="1" x2="12" y2="23"/>
+                            <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+                        </svg>
+                    </div>
+                    <h3>Ingresos Insuficientes</h3>
+                    <p>Tu trabajo actual no te permite alcanzar tus metas financieras</p>
+                </div>
+                <div class="problem-card">
+                    <div class="icon">
+                        <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+                        </svg>
+                    </div>
+                    <h3>Salud Deteriorada</h3>
+                    <p>El estrés y la rutina están afectando tu bienestar físico y mental</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="products">
+        <div class="container">
+            <h2>Productos Que Transforman Vidas</h2>
+        </div>
+        <div id="pin-container" class="pin-container">
+            <div class="product-scroller">
+                <div class="product-card" style="background-image: url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&h=300&fit=crop')">
+                    <div class="card-content">
+                        <h3>Energía</h3>
+                        <p>Suplementos naturales para potenciar tu energía diaria</p>
+                    </div>
+                </div>
+                <div class="product-card" style="background-image: url('https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=400&h=300&fit=crop')">
+                    <div class="card-content">
+                        <h3>Nutrición</h3>
+                        <p>Productos nutricionales de la más alta calidad</p>
+                    </div>
+                </div>
+                <div class="product-card" style="background-image: url('https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=400&h=300&fit=crop')">
+                    <div class="card-content">
+                        <h3>Juventud</h3>
+                        <p>Fórmulas anti-edad respaldadas por la ciencia</p>
+                    </div>
+                </div>
+                <div class="product-card" style="background-image: url('https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=400&h=300&fit=crop')">
+                    <div class="card-content">
+                        <h3>Cuidado Personal</h3>
+                        <p>Productos premium para el cuidado de tu piel</p>
+                    </div>
+                </div>
+                <div class="product-card" style="background-image: url('https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=400&h=300&fit=crop')">
+                    <div class="card-content">
+                        <h3>Bienestar Femenino</h3>
+                        <p>Soluciones específicas para la salud de la mujer</p>
+                    </div>
+                </div>
+                <div class="product-card" style="background-image: url('https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=400&h=300&fit=crop')">
+                    <div class="card-content">
+                        <h3>Equilibrio</h3>
+                        <p>Productos para mantener tu bienestar integral</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Opportunity Section -->
+    <section id="opportunity" class="opportunity">
+        <div class="container">
+            <h2>Una Oportunidad Única de Crecimiento</h2>
+            <div id="opportunity-infographic" class="infographic">
+                <svg width="100%" height="400" viewBox="0 0 800 400">
+                    <!-- Base circles -->
+                    <circle class="level-circle" cx="400" cy="350" r="30" fill="#ff6b6b" opacity="0"/>
+                    <circle class="level-circle" cx="300" cy="280" r="25" fill="#4ecdc4" opacity="0"/>
+                    <circle class="level-circle" cx="500" cy="280" r="25" fill="#4ecdc4" opacity="0"/>
+                    <circle class="level-circle" cx="200" cy="210" r="20" fill="#45b7d1" opacity="0"/>
+                    <circle class="level-circle" cx="350" cy="210" r="20" fill="#45b7d1" opacity="0"/>
+                    <circle class="level-circle" cx="450" cy="210" r="20" fill="#45b7d1" opacity="0"/>
+                    <circle class="level-circle" cx="600" cy="210" r="20" fill="#45b7d1" opacity="0"/>
+                    
+                    <!-- Connection lines -->
+                    <path class="connection-line" d="M400 320 L300 305" stroke="#333" stroke-width="2" fill="none" stroke-dasharray="1000" stroke-dashoffset="1000"/>
+                    <path class="connection-line" d="M400 320 L500 305" stroke="#333" stroke-width="2" fill="none" stroke-dasharray="1000" stroke-dashoffset="1000"/>
+                    <path class="connection-line" d="M300 255 L200 230" stroke="#333" stroke-width="2" fill="none" stroke-dasharray="1000" stroke-dashoffset="1000"/>
+                    <path class="connection-line" d="M300 255 L350 230" stroke="#333" stroke-width="2" fill="none" stroke-dasharray="1000" stroke-dashoffset="1000"/>
+                    <path class="connection-line" d="M500 255 L450 230" stroke="#333" stroke-width="2" fill="none" stroke-dasharray="1000" stroke-dashoffset="1000"/>
+                    <path class="connection-line" d="M500 255 L600 230" stroke="#333" stroke-width="2" fill="none" stroke-dasharray="1000" stroke-dashoffset="1000"/>
+                    
+                    <!-- Labels -->
+                    <text class="level-text" x="400" y="390" text-anchor="middle" opacity="0">TÚ</text>
+                    <text class="level-text" x="300" y="340" text-anchor="middle" opacity="0">Nivel 2</text>
+                    <text class="level-text" x="500" y="340" text-anchor="middle" opacity="0">Nivel 2</text>
+                    <text class="level-text" x="375" y="180" text-anchor="middle" opacity="0">Tu Red Crece</text>
+                </svg>
+            </div>
+            <div class="benefits-list">
+                <h3>Beneficios del Plan de Compensación:</h3>
+                <ul>
+                    <li>Comisiones directas por ventas personales</li>
+                    <li>Bonos de construcción de equipo</li>
+                    <li>Ingresos residuales mensuales</li>
+                    <li>Viajes de incentivos exclusivos</li>
+                    <li>Reconocimientos y premios</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Proof Section -->
+    <section id="social-proof" class="social-proof">
+        <div class="container">
+            <h2>Historias de Éxito Reales</h2>
+            <div class="testimonial-carousel">
+                <div class="testimonial-card">
+                    <div class="video-thumbnail">
+                        <img src="https://images.unsplash.com/photo-1494790108755-2616b612b789?w=150&h=150&fit=crop&crop=face" alt="María testimonial">
+                        <div class="play-button">▶</div>
+                    </div>
+                    <blockquote>
+                        "En solo 6 meses pude dejar mi trabajo y dedicarme completamente a HGW. Ahora tengo tiempo para mi familia y mis ingresos se han triplicado."
+                        <cite>- María González, Madrid</cite>
+                    </blockquote>
+                </div>
+                <div class="testimonial-card">
+                    <div class="video-thumbnail">
+                        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face" alt="Carlos testimonial">
+                        <div class="play-button">▶</div>
+                    </div>
+                    <blockquote>
+                        "HGW no solo cambió mi situación financiera, también mejoró mi salud. Los productos son increíbles y la oportunidad es real."
+                        <cite>- Carlos Ruiz, Barcelona</cite>
+                    </blockquote>
+                </div>
+                <div class="testimonial-card">
+                    <div class="video-thumbnail">
+                        <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&crop=face" alt="Ana testimonial">
+                        <div class="play-button">▶</div>
+                    </div>
+                    <blockquote>
+                        "Empecé como cliente y me enamoré de los productos. Decidí compartir mi experiencia y ahora genero ingresos pasivos cada mes."
+                        <cite>- Ana Martín, Valencia</cite>
+                    </blockquote>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Getting Started and FAQ Section -->
+    <section id="getting-started" class="getting-started">
+        <div class="container">
+            <h2>Cómo Empezar</h2>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Regístrate</h3>
+                    <p>Completa el formulario y únete a nuestra comunidad</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Capacítate</h3>
+                    <p>Accede a nuestra plataforma de entrenamiento gratuita</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Comienza</h3>
+                    <p>Inicia tu negocio y comienza a generar ingresos</p>
+                </div>
+            </div>
+
+            <h2>Preguntas Frecuentes</h2>
+            <div class="faq">
+                <details>
+                    <summary>¿Necesito experiencia previa en ventas?</summary>
+                    <p>No, proporcionamos toda la capacitación necesaria. Nuestro sistema está diseñado para personas sin experiencia previa.</p>
+                </details>
+                <details>
+                    <summary>¿Cuánto tiempo necesito invertir?</summary>
+                    <p>Puedes empezar con solo 1-2 horas al día. El negocio se adapta a tu horario y disponibilidad.</p>
+                </details>
+                <details>
+                    <summary>¿Hay algún costo inicial?</summary>
+                    <p>Solo necesitas adquirir un kit de productos inicial para conocer y probar lo que vas a compartir.</p>
+                </details>
+                <details>
+                    <summary>¿Cómo recibo mis comisiones?</summary>
+                    <p>Las comisiones se pagan semanalmente directamente a tu cuenta bancaria o método de pago preferido.</p>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- Registration Form Section -->
+    <section id="register" class="register">
+        <div class="container">
+            <h2>¡Transforma Tu Vida Hoy Mismo!</h2>
+            <p>Únete a <span id="affiliate-name-placeholder">miles</span> de personas que ya están construyendo su libertad financiera</p>
+            
+            <form id="registration-form" class="registration-form">
+                <div class="form-group">
+                    <input type="text" id="firstName" name="firstName" placeholder="Nombre" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" id="lastName" name="lastName" placeholder="Apellido" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" id="email" name="email" placeholder="Email" required>
+                </div>
+                <div class="form-group">
+                    <input type="tel" id="phone" name="phone" placeholder="Teléfono" required>
+                </div>
+                <div class="form-group">
+                    <select id="country" name="country" required>
+                        <option value="">Selecciona tu país</option>
+                        <option value="ES">España</option>
+                        <option value="MX">México</option>
+                        <option value="CO">Colombia</option>
+                        <option value="AR">Argentina</option>
+                        <option value="PE">Perú</option>
+                        <option value="CL">Chile</option>
+                        <option value="VE">Venezuela</option>
+                        <option value="EC">Ecuador</option>
+                        <option value="GT">Guatemala</option>
+                        <option value="CU">Cuba</option>
+                        <option value="BO">Bolivia</option>
+                        <option value="DO">República Dominicana</option>
+                        <option value="HN">Honduras</option>
+                        <option value="PY">Paraguay</option>
+                        <option value="SV">El Salvador</option>
+                        <option value="NI">Nicaragua</option>
+                        <option value="CR">Costa Rica</option>
+                        <option value="PA">Panamá</option>
+                        <option value="UY">Uruguay</option>
+                        <option value="US">Estados Unidos</option>
+                    </select>
+                </div>
+                <div id="form-errors" class="form-errors"></div>
+                <button type="submit" id="submit-btn" class="submit-btn">
+                    Comenzar Mi Transformación
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>HGW</h3>
+                    <p>Transformando vidas a través de productos excepcionales y oportunidades reales.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="#">Términos y Condiciones</a></li>
+                        <li><a href="#">Política de Privacidad</a></li>
+                        <li><a href="#">Declaración de Ingresos</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contacto</h4>
+                    <p>Email: info@hgw.com</p>
+                    <p>Teléfono: +1 (555) 123-4567</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 HGW. Todos los derechos reservados. Los resultados no están garantizados y pueden variar.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
